@@ -6,16 +6,16 @@ class SessionsController < ApplicationController
     #login 
 
   end 
-  
+
   def create
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
+    @user = User.find_by(uid: auth['uid']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
     end 
 
     session[:user_id] = @user.id 
 
-    render 'welcome/home'
+    redirect_to user_path(@user )
   end
 
   def destroy 
