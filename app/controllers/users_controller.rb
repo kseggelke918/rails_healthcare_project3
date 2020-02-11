@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     # create user - use devise  
 
     def new 
-        @user = User.new 
+        # @user = User.new 
     end 
 
     def create 
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id 
             redirect_to user_path(user)
         else 
-            render :new 
+            redirect_to new_user_path 
         end 
     end 
 
