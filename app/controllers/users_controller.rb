@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
     # create user - use devise  
-    before_action :find_user
+    # before_action :find_user
 
     def new 
-        @user = User.new 
+        # @user = User.new 
     end 
 
     def create 
@@ -24,9 +24,10 @@ class UsersController < ApplicationController
 
     private 
 
-    def find_user 
-        @user = User.find(params[:id])
-    end 
+    # def find_user 
+    #     @user = User.find_or_create_by(params[:id])
+    # end 
+
     def user_params 
         params.require(:user).permit(:name, :specialty, :email, :password, :patient_id)
     end
