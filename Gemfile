@@ -47,3 +47,5 @@ gem "devise", "~> 4.7"
 gem "rubocop", "~> 0.79.0"
 
 gem "pry", "~> 0.12.2"
+
+gem "omniauth-github", "~> 1.4"
