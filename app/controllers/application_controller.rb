@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     # put helper methods here like logged_in?, etc
 
     def welcome 
+        @user = current_user 
     end 
 
     protected 

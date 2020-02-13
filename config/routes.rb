@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users do 
     resources :patients
   end 
+
+  resources :patients, only: [:index]
   
   root 'application#welcome'
   
