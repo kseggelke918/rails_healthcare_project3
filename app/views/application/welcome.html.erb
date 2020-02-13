@@ -1,4 +1,7 @@
 <h1>This is the welcome screen</h1>
 
-<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<%= form_tag destroy_user_session_path, method: :delete do %>
+    <%= hidden_field_tag :_method, 'delete' %>
+    <%= submit_tag "Logout" %>
+<% end %>
 
