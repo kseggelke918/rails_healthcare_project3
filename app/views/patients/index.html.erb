@@ -1,1 +1,13 @@
-This is the patient Index page 
+<table>
+    <tr>
+        <th>Patient Name</th>
+        <th>Patient Symptoms</th>
+    </tr>
+    <% @patients.each do |patient| %>
+        <tr>
+            <td><%= patient.name %></td>
+            <td><%= patient.symptoms %></td><br>
+            <td><%= button_to "Edit", edit_user_patient_path(@user), method: :get %><br></td>
+        </tr>
+    <% end %>
+</table>
