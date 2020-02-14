@@ -1,12 +1,23 @@
 class PatientsController < ApplicationController
     before_action :find_patient, except: [:new, :index]
+    before_action :find_user, only: [:new, :edit]
 
     def new 
         @patient = Patient.new 
     end 
 
-    def create(patient_params)
-        byebug
+    def create
+        @patient = @user.patients.build(patient_params)
+
+        if @patient.save 
+            redirect_to patient_path(@patient)
+        else 
+            render :new 
+        end 
+    end 
+
+    def show 
+
     end 
 
     def index 
@@ -16,10 +27,14 @@ class PatientsController < ApplicationController
 
     private 
     def find_patient 
-        @patient = Patient.find_by(name: params[:name])
+        @patient = Patient.find_by(id: params[:id])
+    end 
+
+    def find_user 
+        @user = User.find_by(id: params[:id])
     end 
         
     def patient_params 
-        params.require(:patient).permit(:name, :symptoms, :doctor_id)
+        params.require(:patient).permit(:name, :symptoms, user_attributes:[:user_id, :name])
     end 
 end

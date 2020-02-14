@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :patients
   end 
 
-  resources :patients, only: [:index]
+  resources :patients, only: [:index, :show, :create]
   
   root 'application#welcome'
   
