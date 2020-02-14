@@ -8,9 +8,10 @@ class PatientsController < ApplicationController
 
     def create
         @patient = @user.patients.build(patient_params)
+        # @patient = Patient.create(patient_params)
 
         if @patient.save 
-            redirect_to patient_path(@patient)
+            redirect_to [@user, @patient]
         else 
             render :new 
         end 
