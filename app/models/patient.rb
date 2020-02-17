@@ -6,6 +6,6 @@ class Patient < ApplicationRecord
     def doctor_names
         self.users.map do |user|
             user.name
-        end 
+        end.join 
     end 
 end
