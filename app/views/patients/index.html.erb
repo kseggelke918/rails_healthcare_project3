@@ -1,5 +1,5 @@
-
-<%= link_to "Add Patient", new_user_patient_path(@user) %><br>
+<%# 
+<%= link_to "Add Patient", new_user_patient_path(@user) %><br> %>
 
 <table>
     <col width="120">
@@ -11,7 +11,7 @@
     <% @patients.each do |patient| %>
         <tr>
             byebug
-            <td><%= link_to patient.name, user_patient_path(@user, patient)%></td>
+            <td><%= link_to patient.name, patient_path(patient.users.id, patient)%></td>
             <td><%= patient.symptoms %></td><br>
         </tr>
     <% end %>

@@ -24,8 +24,6 @@ class PatientsController < ApplicationController
     end 
 
     def index 
-        byebug
-        @user = User.find_by(id: params[:user_id])
         @patients = Patient.all 
     end 
 
@@ -36,7 +34,7 @@ class PatientsController < ApplicationController
     end 
 
     def find_user 
-        @user = User.find_by(id: params[:id])
+        @user = User.find_by(id: params[:user_id])
     end 
         
     def patient_params 
