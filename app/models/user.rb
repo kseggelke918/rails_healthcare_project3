@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
     validates :name, presence: true 
 
-    has_many :user_patients 
-    has_many :patients, through: :user_patients 
+    has_many :appointments
+    has_many :patients, through: :appointments
 
     def self.from_omniauth(auth)
         where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

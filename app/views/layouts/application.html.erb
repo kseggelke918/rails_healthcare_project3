@@ -10,5 +10,14 @@
 
   <body>
     <%= yield %>
+
+  <br>
+
+    <%= button_to "All Patients", patients_path, method: :get %><br>
+
+    <%= form_tag destroy_user_session_path, method: :delete do %>
+    <%= hidden_field_tag :_method, 'delete' %>
+    <%= submit_tag "Logout" %>
+<% end %>
   </body>
 </html>

@@ -1,6 +1,6 @@
 class Patient < ApplicationRecord
-    has_many :user_patients 
-    has_many :users, through: :user_patients
+    has_many :appointments
+    has_many :users, through: :appointments
 
 
     def doctor_names

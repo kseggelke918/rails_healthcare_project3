@@ -1,3 +1,0 @@
-class UserPatientsController < ApplicationController
-    
-end

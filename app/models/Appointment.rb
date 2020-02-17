@@ -1,4 +1,4 @@
-class UserPatient < ApplicationRecord
+class Appointment < ApplicationRecord
     belongs_to :patient 
     belongs_to :user  
 end

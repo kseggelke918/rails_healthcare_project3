@@ -1,10 +1,7 @@
 <h1>Rails Healthcare App</h1>
 
-<%= button_to "Patients", patients_path, method: :get %><br>
 <%= button_to "Add Patient", new_user_patient_path(@user), method: :get %><br>
 
-<%= form_tag destroy_user_session_path, method: :delete do %>
-    <%= hidden_field_tag :_method, 'delete' %>
-    <%= submit_tag "Logout" %>
-<% end %>
+
+
 
