@@ -1,3 +1,5 @@
+# create appointment button goes to correct place - but does not update patient
+
 <h2>All Patients</h2>
 
     <%= form_tag(patients_path, method: :get) do %>
@@ -24,6 +26,7 @@
             <td><%= patient.symptoms %></td>
             <td><%= patient.doctor_names %></td>
             <td><%= patient.appointment_times %></td>
+            <td><%= button_to "Create Appointment", new_user_appointment_path(patient), method: :get %></td>
         </tr>
     <% end %>
 </table>
