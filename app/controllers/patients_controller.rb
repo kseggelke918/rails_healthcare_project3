@@ -8,9 +8,7 @@ class PatientsController < ApplicationController
 
     def create
         @user = User.find_by(id: params[:user_id])
-        byebug
         @patient = @user.patients.build(patient_params)
-        # @patient = Patient.create(patient_params)
 
         if @patient.save 
             redirect_to [@user, @patient]
