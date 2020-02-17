@@ -2,7 +2,9 @@
 
 <h3><%= @patient.name %></h3>
 <p>
-    <%= @patient.symptoms %>
+    Symptoms: <%= @patient.symptoms %><br>
+    <br>
+    Upcoming Appointment: <%= @patient.appointment_times%>
 </p>
 
 <%= button_to "Add Patient", new_user_patient_path(current_user), method: :get %><br>

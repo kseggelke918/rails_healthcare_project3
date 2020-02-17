@@ -1,17 +1,29 @@
+<h2>All Patients</h2>
 
+    <%= form_tag(patients_path, method: :get) do %>
+        <%= label_tag(:search, "Search for a Patient:") %>
+        <%= text_field_tag :search, params[:search]%>
+        <%= submit_tag ("Search")%>
+    <% end %>
+<br>
 <table>
     <col width="120">
     <col width="180">
+    <col width="120">
+    <col width="180">
+    
     <tr>
         <th align="left">Patient Name</th>
         <th align="left"> Patient Symptoms</th>
         <th align="left"> Doctor(s)</th>
+        <th align="left"> Upcoming Appointment</th>
     </tr>
     <% @patients.each do |patient| %>
         <tr>
             <td><%= link_to patient.name, user_patient_path(current_user, patient)%></td>
             <td><%= patient.symptoms %></td>
             <td><%= patient.doctor_names %></td>
+            <td><%= patient.appointment_times %></td>
         </tr>
     <% end %>
 </table>

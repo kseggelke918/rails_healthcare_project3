@@ -9,11 +9,14 @@
   </head>
 
   <body>
+
+    <%= link_to "Home", root_path%>
+    <br>
     <%= yield %>
 
   <br>
 
-    <%= button_to "All Patients", patients_path, method: :get %><br>
+    <%= button_to "All Patients", patients_path, method: :get %>
 
     <%= form_tag destroy_user_session_path, method: :delete do %>
     <%= hidden_field_tag :_method, 'delete' %>

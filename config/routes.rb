@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   resources :users do 
     resources :patients
+    resources :appointments
   end 
 
   resources :patients, only: [:index]

@@ -22,7 +22,7 @@ class PatientsController < ApplicationController
     end 
 
     def index 
-        @patients = Patient.all 
+        @patients = Patient.search(params[:search])
     end 
 
 
@@ -36,6 +36,8 @@ class PatientsController < ApplicationController
     end 
         
     def patient_params 
-        params.require(:patient).permit(:name, :symptoms, user_attributes:[:user_id, :name])
+        params.require(:patient).permit(:name, :symptoms, :search, user_attributes:[:user_id, :name])
     end 
+
+  
 end
