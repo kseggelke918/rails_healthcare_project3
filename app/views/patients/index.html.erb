@@ -1,13 +1,18 @@
+
+<%= link_to "Add Patient", new_user_patient_path(@user) %><br>
+
 <table>
+    <col width="120">
+    <col width="180">
     <tr>
-        <th>Patient Name</th>
-        <th>Patient Symptoms</th>
+        <th align="left">Patient Name</th>
+        <th align="left"> Patient Symptoms</th>
     </tr>
     <% @patients.each do |patient| %>
         <tr>
-            <td><%= patient.name %></td>
+            byebug
+            <td><%= link_to patient.name, user_patient_path(@user, patient)%></td>
             <td><%= patient.symptoms %></td><br>
-            <td><%= button_to "Edit", edit_user_patient_path(@user), method: :get %><br></td>
         </tr>
     <% end %>
 </table>

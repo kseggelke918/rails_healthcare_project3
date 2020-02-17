@@ -7,6 +7,8 @@ class PatientsController < ApplicationController
     end 
 
     def create
+        @user = User.find_by(id: params[:user_id])
+        byebug
         @patient = @user.patients.build(patient_params)
         # @patient = Patient.create(patient_params)
 
@@ -22,6 +24,8 @@ class PatientsController < ApplicationController
     end 
 
     def index 
+        byebug
+        @user = User.find_by(id: params[:user_id])
         @patients = Patient.all 
     end 
 
