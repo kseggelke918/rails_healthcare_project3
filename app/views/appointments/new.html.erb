@@ -1,6 +1,7 @@
 <br>
-<%= form_for :patient, as: :post, url: user_patients_path(current_user) do |f| %>
-    <%= f.collection_select :patient_id, Patient.all, :id, :name%><br>
+<br>
+<%= form_for :patient, as: :post, url: user_appointments_path(current_user) do |f| %>
+    <%= f.collection_select :appointments, Patient.all, :id, :name %><br>
     <br>
     <%= fields_for :appointment, Appointment.new do |ff|%>
          <%= ff.label "Appointment Time"%>
