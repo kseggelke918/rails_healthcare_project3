@@ -1,9 +1,6 @@
-<h1>Rails Healthcare App</h1>
-
-<%= button_to "Add Patient", new_user_patient_path(@user), method: :get %><br>
-
-<%= button_to "Create Appointment", new_user_appointment_path(@user), method: :get %>
+<h1>Hello, <%= @user.name %></h1>
 
 
+<%= render 'patients/links' %>
 
 

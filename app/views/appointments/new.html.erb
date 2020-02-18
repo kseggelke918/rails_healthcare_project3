@@ -9,5 +9,7 @@
     <% end %>
     <%= f.submit "Submit"%>
 <% end %>
+<br>
+<%= button_to "All Patients", patients_path, method: :get %>
 
 # Need to post to the patient when going to patient show path - currently just shows blank user and symptoms

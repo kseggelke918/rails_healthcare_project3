@@ -5,6 +5,10 @@
     Symptoms: <%= @patient.symptoms %><br>
     <br>
     Upcoming Appointment: <%= @patient.appointment_times%>
+    <br>
+    Doctor: <%= @patient.doctor_names%>
 </p>
 
-<%= button_to "Add Patient", new_user_patient_path(current_user), method: :get %><br>
+<%= button_to "Edit Patient", edit_user_patient_path(current_user, @patient) %>
+
+<%= render 'links' %>

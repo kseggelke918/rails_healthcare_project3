@@ -1,6 +1,7 @@
 class Patient < ApplicationRecord
     has_many :appointments
     has_many :users, through: :appointments
+    validates :name, presence: true 
 
     def appointments_attributes=(appointments)
         self.appointments.create(appointments)
@@ -13,9 +14,13 @@ class Patient < ApplicationRecord
     end 
 
     def appointment_times 
-        self.appointments.map do |appointment|
-           appointment.time.strftime("%A, %d %b %Y %l:%M %p")
-        end.join
+        if self.appointments = []
+            "None"
+        else 
+            self.appointments.map do |appointment|
+                appointment.time.strftime("%A, %d %b %Y %l:%M %p")
+            end.join
+        end 
     end 
 
     def self.search(search)
