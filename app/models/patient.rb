@@ -25,7 +25,7 @@ class Patient < ApplicationRecord
 
     def self.search(search)
         if search 
-            searched_patient = Patient.find_by(name: search)
+            searched_patient = Patient.where('name LIKE ?', "%#{search}%")
             if searched_patient 
                 self.where(id: searched_patient)
             else 
@@ -35,4 +35,5 @@ class Patient < ApplicationRecord
             @patients = Patient.all 
         end 
     end 
+
 end

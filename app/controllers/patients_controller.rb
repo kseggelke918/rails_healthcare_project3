@@ -24,6 +24,7 @@ class PatientsController < ApplicationController
     end 
 
     def update 
+        @patient = Patient.update(patient_params)
     end 
 
     def index 
