@@ -16,8 +16,11 @@ class AppointmentsController < ApplicationController
         end 
     end 
 
-    def destroy 
+    def display_next_appointment
+        @test = next_appointment 
+    end 
 
+    def destroy 
     end 
 
     private 
