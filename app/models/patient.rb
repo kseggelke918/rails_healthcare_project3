@@ -8,15 +8,13 @@ class Patient < ApplicationRecord
     end 
 
     def doctor_names
-        @users 
-
-        # self.users.map do |user|
-        #     user.name
-        # end.join 
+        self.users.map do |user|
+            user.name
+        end.join 
     end 
 
     def appointment_times 
-        if self.appointments = []
+        if self.appointments.empty?
             "None"
         else 
             self.appointments.map do |appointment|

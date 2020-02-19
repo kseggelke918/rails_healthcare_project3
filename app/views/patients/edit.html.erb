@@ -9,6 +9,6 @@ This is the user edit page
     <%= f.submit "Submit"%>
 <% end %>
 
-<%= link_to "Delete Patient", delete_patient_path, method: :delete, data: { confirm: "Are you Sure?" } %>
+<%= button_to "Delete Patient", user_patient_path(current_user, @patient), method: :delete %><br>
 
 # be able to add doctor on form

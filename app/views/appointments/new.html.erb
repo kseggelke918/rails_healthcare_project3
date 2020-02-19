@@ -1,14 +1,13 @@
 <br>
 <br>
-<%= form_for :patient, as: :post, url: user_appointments_path(current_user) do |f| %>
-    <%= f.collection_select :appointments, Patient.all, :id, :name %><br>
-    <br>
-    <%= fields_for :appointment, Appointment.new do |ff|%>
-         <%= ff.label "Appointment Time"%>
-         <%= ff.datetime_select :time %>
-    <% end %>
-    <%= f.submit "Submit"%>
+<%= form_for @appointment, method: :post, url: user_appointments_path do |f| %>
+    <%= f.collection_select :patient_id, Patient.all, :id, :name %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+    <%= f.label "Appointment Time:" %>
+    <%= f.datetime_select :time %>
+    <%= f.submit %>
 <% end %>
+
 <br>
 <%= button_to "All Patients", patients_path, method: :get %>
 

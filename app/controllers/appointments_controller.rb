@@ -1,23 +1,22 @@
 class AppointmentsController < ApplicationController
 
     def new 
-
+        @user_id = params[:user_id]
+        @appointment = Appointment.new 
     end 
 
     def create 
-        @patient = Patient.find_by(id: params[:patient][:appointments])
+        @appointment = Appointment.new(appointment_params)
   
-        @appointment = @patient.appointments.build(appointment_params)
-        byebug
         if @appointment.save 
-            redirect_to [@user, @patient]
+            redirect_to patients_url
         else 
             render :new 
         end 
     end 
 
     def display_next_appointment
-        @test = "Hello World"
+        @next_appointment = current_user.appointments.next_appointment 
     end 
 
     def destroy 
@@ -25,8 +24,12 @@ class AppointmentsController < ApplicationController
 
     private 
 
+    def find_appointment 
+        @appointment = Appointment.find_by(id: params[:id])
+    end 
+
     def appointment_params
-        params.require(:appointment).permit(:time, :user_id, patient_attributes:[:patient_id, :name, :symptoms])
+        params.require(:appointment).permit(:time, :user_id, :patient_id)
     end 
     
 end
