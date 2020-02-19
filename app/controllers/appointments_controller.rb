@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
     end 
 
     def display_next_appointment
-        @test = next_appointment 
+        @test = "Hello World"
     end 
 
     def destroy 

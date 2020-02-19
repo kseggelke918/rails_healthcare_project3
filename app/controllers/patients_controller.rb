@@ -18,6 +18,7 @@ class PatientsController < ApplicationController
     end 
 
     def show 
+        byebug
     end 
 
     def edit 

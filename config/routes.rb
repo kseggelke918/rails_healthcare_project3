@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   
   root 'application#welcome'
   get 'user_profile', to: 'users#user_profile'
-  get 'next_appointment', to: 'appointments#next_appointment'
+  get 'next_appointment', to: 'appointments#display_next_appointment'
   
 end

@@ -8,9 +8,11 @@ class Patient < ApplicationRecord
     end 
 
     def doctor_names
-        self.users.map do |user|
-            user.name
-        end.join 
+        @users 
+
+        # self.users.map do |user|
+        #     user.name
+        # end.join 
     end 
 
     def appointment_times 

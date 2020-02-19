@@ -3,6 +3,6 @@ class Appointment < ApplicationRecord
     belongs_to :user  
 
     def next_appointment
-        "Hello World"
+        # method to show the next patient's appointment
     end 
 end
