@@ -1,0 +1,10 @@
+<h2>User Edit Page</h2>
+
+<%= form_for @user do |f| %>
+    <%= f.label "Name" %>
+    <%= f.text_field :name %><br>
+    <%= f.label "Specialty"%>
+    <%= f.text_field :specialty%><br>
+    <%= f.submit %>
+
+<% end %>

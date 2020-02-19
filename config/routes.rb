@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :patients, only: [:index]
   
   root 'application#welcome'
+  get 'user_profile', to: 'users#user_profile'
   
 end

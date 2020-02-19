@@ -8,9 +8,19 @@ class UsersController < ApplicationController
         session.delete 
     end 
 
+    def user_profile
+    end 
+
+    def edit 
+    end 
+
+    def update 
+        @user = User.update(user_params)
+    end 
+
     private 
 
-    def user_parms
+    def user_params
         params.require(:user).permit(:name, :specialty)
     end 
 

@@ -1,0 +1,10 @@
+<h3>User Profile Page</h3>
+
+Name: <%= current_user.name %><br>
+Email: <%= current_user.email %><br>
+Specialty: <%= current_user.specialty%>
+<br>
+<br>
+<%= link_to "Change email or password", edit_user_registration_path %><br>
+<%= link_to "Change name or specialty", edit_user_path(current_user) %>
+<br>
