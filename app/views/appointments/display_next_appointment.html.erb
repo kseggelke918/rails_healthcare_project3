@@ -1,3 +1,4 @@
 <h4>Next Appointment:</h4>
 
-<%= @next_appointment.time %>
+<%= @next_appointment.time.strftime("%A, %d %b %Y %l:%M %p") %>
+<br>
