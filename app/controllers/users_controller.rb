@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     end 
 
     def update 
-        @user = User.update(user_params)
+        @user.update(user_params)
+        redirect_to user_profile_path
     end 
 
     private 

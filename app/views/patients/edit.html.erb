@@ -1,5 +1,4 @@
-This is the user edit page 
-
+<h3>Edit a User</h3>
 <%= form_for @patient, method: :patch, url: user_patient_path(current_user, @patient) do |f| %>
     <%= f.label "Patient Name:"%>
     <%= f.text_field :name %><br>
@@ -11,4 +10,3 @@ This is the user edit page
 
 <%= button_to "Delete Patient", user_patient_path(current_user, @patient), method: :delete %><br>
 
-# be able to add doctor on form

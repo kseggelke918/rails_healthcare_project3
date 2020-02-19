@@ -1,8 +1,12 @@
 <br>
 <br>
 <%= form_for @appointment, method: :post, url: user_appointments_path do |f| %>
-    <%= f.collection_select :patient_id, Patient.all, :id, :name %>
-    <%= f.collection_select :user_id, User.all, :id, :name %>
+    <%= f.label "Patient:"%>
+    <%= f.collection_select :patient_id, Patient.all, :id, :name %><br>
+    <br>
+    <%= f.label "Doctor:"%>
+    <%= f.collection_select :user_id, User.all, :id, :name %><br>
+    <br>
     <%= f.label "Appointment Time:" %>
     <%= f.datetime_select :time %>
     <%= f.submit %>
@@ -11,4 +15,3 @@
 <br>
 <%= button_to "All Patients", patients_path, method: :get %>
 
-# Need to post to the patient when going to patient show path - currently just shows blank user and symptoms
