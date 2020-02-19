@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   root 'application#welcome'
   get 'user_profile', to: 'users#user_profile'
   get 'next_appointment', to: 'appointments#display_next_appointment'
+  delete '/users/:user_id/patients/:id', to: 'patients#destroy', as: 'delete_patient'
   
 end

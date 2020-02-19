@@ -1,3 +1,9 @@
 <h1>Add a Patient </h1>
-
-<%= render 'form', patient: @patient %>
+<%= form_for :patient, as: :post, url: user_patients_path(current_user) do |f| %>
+    <%= f.label "Patient Name:"%>
+    <%= f.text_field :name %><br>
+    <%= f.label "Patient Symptoms:"%>
+    <%= f.text_area :symptoms%><br>
+    <br>
+    <%= f.submit "Submit"%>
+<% end %>

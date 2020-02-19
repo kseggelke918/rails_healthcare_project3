@@ -1,6 +1,14 @@
 This is the user edit page 
 
-<%= render 'form', patient: @patient %>
+<%= form_for @patient, method: :patch, url: user_patient_path(current_user, @patient) do |f| %>
+    <%= f.label "Patient Name:"%>
+    <%= f.text_field :name %><br>
+    <%= f.label "Patient Symptoms:"%>
+    <%= f.text_area :symptoms%><br>
+    <br>
+    <%= f.submit "Submit"%>
+<% end %>
 
-#put delete button on edit form 
+<%= link_to "Delete Patient", delete_patient_path, method: :delete, data: { confirm: "Are you Sure?" } %>
+
 # be able to add doctor on form

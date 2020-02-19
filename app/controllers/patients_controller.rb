@@ -18,18 +18,23 @@ class PatientsController < ApplicationController
     end 
 
     def show 
-        byebug
     end 
 
     def edit 
     end 
 
     def update 
-        @patient = Patient.update(patient_params)
+        @patient.update(patient_params)
+        redirect_to patients_url
     end 
 
     def index 
         @patients = Patient.search(params[:search])
+    end 
+
+    def destroy 
+        @patient.destroy
+        redirect_to patients_url
     end 
 
 
