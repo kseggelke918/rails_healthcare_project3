@@ -1,4 +1,13 @@
 <h1>Add a Patient </h1>
+
+<% if !!flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p style="color:red"><%= e %> </p><br>
+    <% end %>
+<% end %>
+
+
+
 <%= form_for :patient, as: :post, url: user_patients_path(current_user) do |f| %>
     <%= f.label "Patient Name:"%>
     <%= f.text_field :name %><br>

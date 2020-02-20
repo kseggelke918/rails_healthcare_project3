@@ -1,19 +1,19 @@
 class PatientsController < ApplicationController
     before_action :find_patient, except: [:new, :index]
-    before_action :find_user, only: [:new, :edit]
+    before_action :find_user, only: [:new, :edit, :create, :update]
 
     def new 
         @patient = Patient.new 
     end 
 
     def create
-        @user = User.find_by(id: params[:user_id])
         @patient = @user.patients.build(patient_params)
 
         if @patient.save 
             redirect_to [@user, @patient]
         else 
-            render :new 
+            flash[:errors] = @patient.errors.full_messages
+            redirect_to new_user_patient_path(@user, @patient)
         end 
     end 
 
@@ -24,8 +24,12 @@ class PatientsController < ApplicationController
     end 
 
     def update 
-        @patient.update(patient_params)
-        redirect_to patients_url
+        if @patient.update(patient_params)
+            redirect_to patients_url
+        else 
+            flash[:errors] = @patient.errors.full_messages
+            redirect_to edit_user_patient_path(@user, @patient)
+        end 
     end 
 
     def index 
