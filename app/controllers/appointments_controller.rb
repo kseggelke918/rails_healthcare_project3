@@ -1,7 +1,6 @@
 class AppointmentsController < ApplicationController
 
     def new 
-        byebug
         @user_id = params[:user_id]
         @appointment = Appointment.new 
     end 
@@ -12,7 +11,8 @@ class AppointmentsController < ApplicationController
         if @appointment.save 
             redirect_to patients_url
         else 
-            render :new 
+            flash[:errors] = @appointment.errors.full_messages
+            redirect_to new_user_appointment_path(current_user, @appointment)
         end 
     end 
 

@@ -16,7 +16,12 @@ class UsersController < ApplicationController
 
     def update 
         @user.update(user_params)
-        redirect_to user_profile_path
+        if @user.valid?
+            redirect_to user_profile_path
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_to edit_user_path(@user)
+        end 
     end 
 
     private 

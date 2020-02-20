@@ -6,5 +6,4 @@ class Appointment < ApplicationRecord
 
     validates :time, uniqueness: { scope: :user, message: "Doctor already has appointment at this time"}
 
-
 end

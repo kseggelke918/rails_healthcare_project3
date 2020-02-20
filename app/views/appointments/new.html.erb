@@ -1,5 +1,11 @@
-<br>
-<br>
+<h3>Create an Appointment</h3>
+
+<% if !!flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p style="color:red"><%= e %> </p><br>
+    <% end %>
+<% end %>
+
 <%= form_for @appointment, method: :post, url: user_appointments_path do |f| %>
     <%= f.label "Patient:"%>
     <%= f.collection_select :patient_id, Patient.all, :id, :name %><br>
