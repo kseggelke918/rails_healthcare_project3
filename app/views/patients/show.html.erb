@@ -5,6 +5,7 @@
     Symptoms: <%= @patient.symptoms %><br>
     <br>
     Upcoming Appointment: <%= @patient.appointment_times%><br>
+    <%= button_to "Cancel Appointment", user_appointment_path(current_user, @appointment), method: :delete %><br>
     <br>
     Doctor: <%= @patient.doctor_names%>
 </p>
