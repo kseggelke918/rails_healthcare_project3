@@ -1,25 +1,17 @@
-# README
+Welcome! This application is meant to display doctor (user)/patient relationships and schedule appointments.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
 
-Things you may want to cover:
+Execute:
 
-* Ruby version
+$ bundle install
 
-* System dependencies
+Usage To use this application, run the rails server in the terminal.
 
-* Configuration
+Walkthrough https://www.youtube.com/watch?v=PN8emc_7BWc
 
-* Database creation
+Contributing Bug reports and pull requests are welcome on GitHub at https://github.com/kseggelke918/rails_healthcare_project3. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Database initialization
+License The application is available as open source under the terms of the MIT License.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# rails_healthcare_project3
+Code of Conduct Everyone interacting in the rails_healthcare_project3 project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
