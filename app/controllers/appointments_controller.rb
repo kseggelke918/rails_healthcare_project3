@@ -20,12 +20,6 @@ class AppointmentsController < ApplicationController
         @next_appointment = current_user.appointments.next_appointment 
     end 
 
-    def destroy 
-        @appointment = Appointment.find_by(id: params[:id])
-        @appointment.destroy
-        redirect_to patients_path 
-    end 
-
     private 
 
     def appointment_params
