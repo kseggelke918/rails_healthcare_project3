@@ -1,11 +1,12 @@
 class AppointmentsController < ApplicationController
 
     def new 
+        byebug
         @user_id = params[:user_id]
         @appointment = Appointment.new 
     end 
 
-    def create 
+    def create    
         @appointment = Appointment.new(appointment_params)
   
         if @appointment.save 
