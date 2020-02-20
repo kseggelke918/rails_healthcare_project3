@@ -13,7 +13,7 @@ class PatientsController < ApplicationController
             redirect_to [@user, @patient]
         else 
             flash[:errors] = @patient.errors.full_messages
-            redirect_to new_user_patient_path(@user, @patient)
+            render :new 
         end 
     end 
 
@@ -28,7 +28,7 @@ class PatientsController < ApplicationController
             redirect_to patients_url
         else 
             flash[:errors] = @patient.errors.full_messages
-            redirect_to edit_user_patient_path(@user, @patient)
+            render :edit
         end 
     end 
 

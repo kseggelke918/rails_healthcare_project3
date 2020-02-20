@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
             redirect_to patients_url
         else 
             flash[:errors] = @appointment.errors.full_messages
-            redirect_to new_user_appointment_path(current_user, @appointment)
+            render :new 
         end 
     end 
 
