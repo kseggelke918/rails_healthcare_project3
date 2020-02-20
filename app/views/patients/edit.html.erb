@@ -1,10 +1,6 @@
 <h3>Edit a User</h3>
 
-<% if !!flash[:errors] %>
-    <% flash[:errors].each do |e| %>
-        <p style="color:red"><%= e %> </p><br>
-    <% end %>
-<% end %>
+<%= render 'errors' %>
 
 <%= form_for @patient, method: :patch, url: user_patient_path(current_user, @patient) do |f| %>
     <%= f.label "Patient Name:"%>
