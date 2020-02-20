@@ -9,7 +9,7 @@ class Patient < ApplicationRecord
 
     def doctor_names
         self.users.map do |user|
-            user.name
+            user.name + " "
         end.join 
     end 
 
@@ -18,7 +18,7 @@ class Patient < ApplicationRecord
             "None"
         else 
             self.appointments.map do |appointment|
-                appointment.time.strftime("%A, %d %b %Y %l:%M %p")
+                appointment.time.strftime("%A, %d %b %Y %l:%M %p") + "  "
             end.join
         end 
     end 

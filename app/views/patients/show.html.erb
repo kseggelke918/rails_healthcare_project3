@@ -4,10 +4,20 @@
 <p>
     Symptoms: <%= @patient.symptoms %><br>
     <br>
-    Upcoming Appointment: <%= @patient.appointment_times%><br>
-    <%= button_to "Cancel Appointment", user_appointment_path(current_user, @appointment), method: :delete %><br>
+    Upcoming Appointment(s): 
+    <ul style="list-style-type:none;">
+        <% @patient.appointment_times.split("  ").each do |time| %>
+            <li><%= time %> </li>
+        <% end %>
+    </ul>
+    <%# <%= button_to "Cancel Appointment", user_appointment_path(current_user, @appointment), method: :delete %><br> %>
     <br>
-    Doctor: <%= @patient.doctor_names%>
+    Doctor(s): <ul style="list-style-type:none;">
+        <% @patient.doctor_names.split.each do |name| %>
+            <li><%= name %> </li>
+        <% end %>
+    </ul>
+
 </p>
 
 <%= button_to "Edit Patient", edit_user_patient_path(current_user, @patient), method: :get %>

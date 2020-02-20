@@ -9,7 +9,7 @@
 <table>
     <col width="120">
     <col width="180">
-    <col width="120">
+    <col width="100">
     <col width="200">
     
     <tr>
@@ -22,9 +22,20 @@
         <tr>
             <td><%= link_to patient.name, user_patient_path(current_user, patient)%></td>
             <td><%= patient.symptoms %></td>
-            <td><%= patient.doctor_names %></td>
-            <td><%= patient.appointment_times %></td>
-            <td><%= button_to "Create Appointment", new_user_appointment_path(patient), method: :get %></td>
+            <td >
+                <ul style="list-style-type:none;">
+                    <% patient.doctor_names.split.each do |doctor| %>
+                        <li><%= doctor %> </li>
+                    <% end %>
+                </ul>
+            </td>
+            <td style="vertical-align:top">
+                <ul style="list-style-type:none;">
+                    <% patient.appointment_times.split("  ").each do |time| %>
+                        <li><%= time %> </li>
+                    <% end %>
+                </ul>
+            </td>
         </tr>
     <% end %>
 </table>
