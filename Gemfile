@@ -49,3 +49,5 @@ gem "rubocop", "~> 0.79.0"
 gem "pry", "~> 0.12.2"
 
 gem "omniauth-github", "~> 1.4"
+
+gem "font_awesome5_rails", "~> 1.0"
