@@ -18,6 +18,12 @@ class AppointmentsController < ApplicationController
 
     def display_next_appointment
         @next_appointment = current_user.appointments.next_appointment 
+        if @next_appointment
+            render :display_next_appointment
+        else 
+            flash[:errors] = "appointment not created"
+            render :new 
+        end 
     end 
 
     private 
