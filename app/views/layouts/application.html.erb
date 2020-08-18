@@ -9,9 +9,10 @@
   </head>
 
   <body>
-
-    <%= link_to "Home", root_path%>
-    <%= link_to "User Profile", user_profile_path %>
+    <div>
+      <%= link_to "Home", root_path%>
+      <%= link_to "User Profile", user_profile_path %>
+    </div>
     
     
     
@@ -21,11 +22,14 @@
     <%= yield %>
 
   <br>
-
-    <%= form_tag destroy_user_session_path, method: :delete do %>
-    <%= hidden_field_tag :_method, 'delete' %>
-    <%= submit_tag "Logout" %>
-
+  <br>
+  <br>
+  <br>
+    <div class="buttons">
+      <%= form_tag destroy_user_session_path, method: :delete do %>
+      <%= hidden_field_tag :_method, 'delete' %>
+      <%= submit_tag "Logout" %>
+    </div>
     
 <% end %>
   </body>
