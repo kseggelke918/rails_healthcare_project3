@@ -48,3 +48,5 @@ gem "pry", "~> 0.12.2"
 
 gem "omniauth-github", "~> 1.4"
 
+gem "omniauth-google-oauth2"
+
